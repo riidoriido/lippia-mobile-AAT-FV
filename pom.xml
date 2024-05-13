@@ -1,16 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Lippia-mobile-sample-project</artifactId>
-    <url>https://maven.apache.org</url>
+    <artifactId>Lippia-mobile-example-project</artifactId>
+    <url>http://maven.apache.org</url>
     <packaging>jar</packaging>
-    <name>Lippia-mobile-sample-project</name>
+    <name>Lippia-mobile-example-project</name>
     <version>1.0.0</version>
 
     <parent>
-        <groupId>io.lippia</groupId>
-        <artifactId>root</artifactId>
-        <version>3.3.0.2</version>
+       <groupId>io.lippia</groupId>
+       <artifactId>root</artifactId>
+       <version>3.2.3.8</version>
     </parent>
 
     <properties>
@@ -32,54 +32,62 @@
             </activation>
             <properties>
                 <crowdar.driverHub>http://127.0.0.1:4723/</crowdar.driverHub>
-                <cucumber.runner>testngSecuencial.xml</cucumber.runner>
+                <cucumber.runner>testng.xml</cucumber.runner>
                 <crowdar.avd>Pixel3</crowdar.avd>
-                <crowdar.appLocation>C:\\\\Users\\\\riido\\\\Documents\\\\Development\\\\2024\\\\AAT-2024-Crowdar\\\\sample lippia mobile\\\\lippia-mobile-sample-project\\\\sample_apk\\\\lippia.apk</crowdar.appLocation>
+                <crowdar.appLocation>C:\\\\Users\\\\riido\\\\Documents\\\\Development\\\\2024\\\\AAT-2024-Crowdar\\\\TP7 - lippia mobile\\\\lippia-mobile-AAT-FV\\\\sample_apk\\\\lippia.apk</crowdar.appLocation>
+
                 <crowdar.deviceName>Pixel3</crowdar.deviceName>
-                </properties>
+            </properties>
         </profile>
-
-
-        <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-        <!--   Profiles related to Runners ejecutions         -->
-        <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-
         <profile>
-            <id>secuencial</id>
+            <id>StackLocal</id>
+            <properties>
+                <crowdar.driverHub>http://localhost:4444/wd/hub</crowdar.driverHub>
+                <crowdar.avd>samsung_galaxy_s7_9.0</crowdar.avd>
+                <crowdar.appLocation>/root/tmp/sample_apk/lippia.apk</crowdar.appLocation>
+                <crowdar.deviceName>Android Emulator</crowdar.deviceName>
+            </properties>
+        </profile>
+        <profile>
+            <id>Android</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <runner>testngSecuencial.xml</runner>
+                <crowdar.projectType>MOBILE_ANDROID</crowdar.projectType>
             </properties>
         </profile>
-
         <profile>
-            <id>parallel</id>
+            <id>Ios</id>
             <properties>
-                <runner>testngParallel.xml</runner>
+                <crowdar.projectType>MOBILE_IOS</crowdar.projectType>
+            </properties>
+        </profile>
+    	<profile>
+            <id>BrowserStack</id>
+            <properties>
+                <cucumber.runner>testng.xml</cucumber.runner>
+                <crowdar.deviceName>Google Pixel 3</crowdar.deviceName>
+                <crowdar.os.version>9.0</crowdar.os.version>
+                <crowdar.appLocation>bs://7e498849c478c31cba239bb5edcd0a73cd3c3fed</crowdar.appLocation>
+                <crowdar.projectType.driverCapabilities.jsonFile>src/main/resources/capabilities/browserStackCapabilities.json</crowdar.projectType.driverCapabilities.jsonFile>
+                <crowdar.driverHub>https://user:key@hub-cloud.browserstack.com/wd/hub</crowdar.driverHub>
             </properties>
         </profile>
     </profiles>
 
     <dependencies>
         <dependency>
-            <groupId>io.lippia</groupId>
-            <artifactId>core</artifactId>
-            <version>${project.parent.version}</version>
+                <groupId>io.lippia</groupId>
+                <artifactId>core</artifactId>
+                <version>${project.parent.version}</version>
         </dependency>
         <dependency>
             <groupId>io.lippia.report</groupId>
             <artifactId>extentreports-cucumber4-adapter</artifactId>
             <version>1.1.0.10</version>
         </dependency>
-        <dependency>
-            <groupId>io.lippia.report</groupId>
-            <artifactId>ltm-cucumber4-adapter</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
     </dependencies>
-
     <build>
         <testResources>
             <testResource>
@@ -93,32 +101,24 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M4</version>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M4</version>
                 <configuration>
+                    <useSystemClassLoader>false</useSystemClassLoader>
                     <suiteXmlFiles>
                         <suiteXmlFile>${cucumber.runner}</suiteXmlFile>
                     </suiteXmlFiles>
-                    <systemPropertyVariables>
-                        <TEST_MANAGER_USERNAME>admin</TEST_MANAGER_USERNAME>
-                        <TEST_MANAGER_PASSWORD>admin</TEST_MANAGER_PASSWORD>
-                        <TEST_MANAGER_API_HOST>https://runs.demo.lippia.io</TEST_MANAGER_API_HOST>
-                        <TEST_MANAGER_API_PORT></TEST_MANAGER_API_PORT>
-                        <TEST_MANAGER_RUN_NAME>Mobile Demo</TEST_MANAGER_RUN_NAME>
-                        <TEST_MANAGER_PROJECT_CODE>LIPDEM</TEST_MANAGER_PROJECT_CODE>
-                    </systemPropertyVariables>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 
     <repositories>
-        <repository>
-            <id>crowdarRepo</id>
-            <name>crowdar-repository</name>
-            <url>https://nexus-v3-repositories.automation.crowdaronline.com/repository/maven-public/</url>
-        </repository>
-    </repositories>
+		<repository>
+			<id>crowdarRepo</id>
+			<name>crowdar-repository</name>
+			<url>https://nexus-v3-repositories.automation.crowdaronline.com/repository/maven-public/</url>
+		</repository>
+	</repositories>
 
 </project>

@@ -31,8 +31,8 @@ Feature: As a potential client i want to interact with the mobile application
     Then Login page is displayed
 
     Examples:
-      | username   | email                | password |
-      | automation | automation@gmail.com | 123456   |
+      | email                | password |
+      | automation@gmail.com | 123456   |
 
 
 
