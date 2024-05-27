@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>ClockifyTP8_FV</artifactId>
@@ -9,9 +8,9 @@
     <version>1.0.0</version>
 
     <parent>
-        <groupId>io.lippia</groupId>
-        <artifactId>root</artifactId>
-        <version>3.2.3.8</version>
+       <groupId>io.lippia</groupId>
+       <artifactId>root</artifactId>
+       <version>3.2.3.8</version>
     </parent>
 
     <properties>
@@ -19,12 +18,8 @@
         <crowdar.cucumber.filter>@Regression</crowdar.cucumber.filter>
         <cucumber.runner>testngParallel.xml</cucumber.runner>
         <crowdar.driverHub></crowdar.driverHub>
-        <crowdar.cucumber.option>src/test/resources/features --glue com/crowdar --glue com/crowdar/bdd/cukes --tags
-            ${crowdar.cucumber.filter} --tags 'not @Ignore' --plugin com.crowdar.examples.report.Reporter: --plugin
-            pretty
-        </crowdar.cucumber.option>
-        <crowdar.projectType.driverCapabilities.jsonFile>src/main/resources/capabilities/androidCapabilities.json
-        </crowdar.projectType.driverCapabilities.jsonFile>
+        <crowdar.cucumber.option>src/test/resources/features --glue com/crowdar --glue com/crowdar/bdd/cukes  --tags ${crowdar.cucumber.filter} --tags 'not @Ignore' --plugin com.crowdar.examples.report.Reporter: --plugin pretty</crowdar.cucumber.option>
+        <crowdar.projectType.driverCapabilities.jsonFile>src/main/resources/capabilities/androidCapabilities.json</crowdar.projectType.driverCapabilities.jsonFile>
         <crowdar.remoteDriverType></crowdar.remoteDriverType>
         <crowdar.reporter.avent>true</crowdar.reporter.avent>
         <clockify.user>fervazquez.dev@gmail.com</clockify.user>
@@ -41,9 +36,7 @@
                 <crowdar.driverHub>http://127.0.0.1:4723/</crowdar.driverHub>
                 <cucumber.runner>testng.xml</cucumber.runner>
                 <crowdar.avd>Pixel3</crowdar.avd>
-                <crowdar.appLocation>
-                    C:\\\\Users\\\\riido\\\\Documents\\\\Development\\\\2024\\\\AAT-2024-Crowdar\\\\TP7_mobile\\\\lippia-mobile-AAT-FV\\\\Clockify.apk
-                </crowdar.appLocation>
+                <crowdar.appLocation>C:\\\\Users\\\\riido\\\\Documents\\\\Development\\\\2024\\\\AAT-2024-Crowdar\\\\TP7_mobile\\\\lippia-mobile-AAT-FV\\\\Clockify.apk</crowdar.appLocation>
 
                 <crowdar.deviceName>Pixel3</crowdar.deviceName>
             </properties>
@@ -54,13 +47,9 @@
                 <crowdar.driverHub>http://127.0.0.1:4723/</crowdar.driverHub>
                 <cucumber.runner>testng.xml</cucumber.runner>
                 <crowdar.redmi9avd>M2004J19C</crowdar.redmi9avd>
-                <crowdar.appLocation>C:\\\\Users\\\\riido\\\\Documents\\\\Development\\\\2024\\\\AAT-2024-Crowdar\\\\TP7
-                    - lippia mobile\\\\lippia-mobile-AAT-FV\\\\Clockify.apk
-                </crowdar.appLocation>
+                <crowdar.appLocation>C:\\\\Users\\\\riido\\\\Documents\\\\Development\\\\2024\\\\AAT-2024-Crowdar\\\\TP7 - lippia mobile\\\\lippia-mobile-AAT-FV\\\\Clockify.apk</crowdar.appLocation>
                 <crowdar.realDeviceName>M2004J19C</crowdar.realDeviceName>
-                <crowdar.projectType.driverCapabilities.jsonFile>
-                    src/main/resources/capabilities/redmi9Capabilities.json
-                </crowdar.projectType.driverCapabilities.jsonFile>
+                <crowdar.projectType.driverCapabilities.jsonFile>src/main/resources/capabilities/redmi9Capabilities.json</crowdar.projectType.driverCapabilities.jsonFile>
 
             </properties>
         </profile>
@@ -82,28 +71,24 @@
                 <crowdar.projectType>MOBILE_ANDROID</crowdar.projectType>
             </properties>
         </profile>
-        <profile>
+    	<profile>
             <id>BrowserStack</id>
             <properties>
                 <cucumber.runner>testng.xml</cucumber.runner>
                 <crowdar.deviceName>Google Pixel 3</crowdar.deviceName>
                 <crowdar.os.version>9.0</crowdar.os.version>
                 <crowdar.appLocation>bs://3f3a9c55bf052a919bd090e018963d0e86297add</crowdar.appLocation>
-                <crowdar.projectType.driverCapabilities.jsonFile>
-                    src/main/resources/capabilities/browserStackCapabilities.json
-                </crowdar.projectType.driverCapabilities.jsonFile>
-                <crowdar.driverHub>
-                    https://${env.browserStackUSR}:${env.browserStackAK}@hub-cloud.browserstack.com/wd/hub
-                </crowdar.driverHub>
+                <crowdar.projectType.driverCapabilities.jsonFile>src/main/resources/capabilities/browserStackCapabilities.json</crowdar.projectType.driverCapabilities.jsonFile>
+                <crowdar.driverHub>https://${env.browserStackUSR}:${env.browserStackAK}@hub-cloud.browserstack.com/wd/hub</crowdar.driverHub>
             </properties>
         </profile>
     </profiles>
 
     <dependencies>
         <dependency>
-            <groupId>io.lippia</groupId>
-            <artifactId>core</artifactId>
-            <version>${project.parent.version}</version>
+                <groupId>io.lippia</groupId>
+                <artifactId>core</artifactId>
+                <version>${project.parent.version}</version>
         </dependency>
         <dependency>
             <groupId>io.lippia.report</groupId>
@@ -125,8 +110,8 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M4</version>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M4</version>
                 <configuration>
                     <useSystemClassLoader>false</useSystemClassLoader>
                     <suiteXmlFiles>
@@ -146,11 +131,11 @@
     </build>
 
     <repositories>
-        <repository>
-            <id>crowdarRepo</id>
-            <name>crowdar-repository</name>
-            <url>https://nexus-v3-repositories.automation.crowdaronline.com/repository/maven-public/</url>
-        </repository>
-    </repositories>
+		<repository>
+			<id>crowdarRepo</id>
+			<name>crowdar-repository</name>
+			<url>https://nexus-v3-repositories.automation.crowdaronline.com/repository/maven-public/</url>
+		</repository>
+	</repositories>
 
 </project>

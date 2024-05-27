@@ -1,4 +1,4 @@
-package constants;
+package com.crowdar.examples.constants;
 
 public class TimeEntryConstants {
     public static final String NEW_TIME_ENTRY = "//android.view.View[@resource-id=\"floatingBtn onlyTime: false\"]/android.widget.Button";

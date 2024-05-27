@@ -1,8 +1,8 @@
-package steps;
+package com.crowdar.examples.steps;
 
+import com.crowdar.examples.services.TimeEntryService;
 import com.crowdar.core.PageSteps;
-import services.GenericService;
-import services.TimeEntryService;
+import com.crowdar.examples.services.GenericService;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

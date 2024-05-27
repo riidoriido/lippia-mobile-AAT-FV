@@ -1,8 +1,8 @@
-package services;
+package com.crowdar.examples.services;
 
 import com.crowdar.core.PropertyManager;
 import com.crowdar.core.actions.MobileActionManager;
-import constants.LoginConstants;
+import com.crowdar.examples.constants.LoginConstants;
 import org.testng.Assert;
 
 import java.util.Map;

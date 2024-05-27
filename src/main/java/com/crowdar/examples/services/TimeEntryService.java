@@ -1,8 +1,8 @@
-package services;
+package com.crowdar.examples.services;
 
 import com.crowdar.core.actions.MobileActionManager;
-import constants.LoginConstants;
-import constants.TimeEntryConstants;
+import com.crowdar.examples.constants.LoginConstants;
+import com.crowdar.examples.constants.TimeEntryConstants;
 import org.testng.Assert;
 
 public class TimeEntryService {

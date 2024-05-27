@@ -1,8 +1,8 @@
-package services;
+package com.crowdar.examples.services;
 
 import com.crowdar.core.actions.MobileActionManager;
 import com.crowdar.driver.DriverManager;
-import constants.LoginConstants;
+import com.crowdar.examples.constants.LoginConstants;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 

@@ -1,8 +1,8 @@
-package steps;
+package com.crowdar.examples.steps;
 
+import com.crowdar.examples.services.GenericService;
+import com.crowdar.examples.services.LoginService;
 import com.crowdar.core.PageSteps;
-import services.GenericService;
-import services.LoginService;
 import io.cucumber.java.en.*;
 
 public class LoginSteps extends PageSteps {

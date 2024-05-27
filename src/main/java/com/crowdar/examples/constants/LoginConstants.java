@@ -1,4 +1,4 @@
-package constants;
+package com.crowdar.examples.constants;
 
 public class LoginConstants {
     public static final String LOGIN_TITLE_TXT = "xpath://android.widget.ImageView[@content-desc='Clockify logo']";
