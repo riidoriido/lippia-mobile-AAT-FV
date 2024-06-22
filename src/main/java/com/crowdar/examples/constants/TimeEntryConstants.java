@@ -1,7 +1,7 @@
 package com.crowdar.examples.constants;
 
 public class TimeEntryConstants {
-    public static final String NEW_TIME_ENTRY = "//android.view.View[@resource-id=\"floatingBtn onlyTime: false\"]/android.widget.Button";
+    public static final String NEW_TIME_ENTRY_XPATH = "//android.view.View[@resource-id=\"floatingBtn onlyTime: false\"]/android.widget.Button";
     public static final String ADD_MANUAL_ENTRY = "xpath://android.view.ViewGroup/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button";
     public static final String INPUT_HOURS = "xpath://android.widget.EditText[@resource-id='hoursInput']";
     public static final String SET_HOURS = "xpath://android.view.View[@resource-id='durationPickerConfirmDialog']/android.widget.Button";

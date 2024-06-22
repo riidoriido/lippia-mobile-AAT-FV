@@ -33,4 +33,27 @@ public class LoginSteps extends PageSteps {
         LoginService.verifyLoggedin();
     }
 
+    @And("the user taps on Menu button")
+    public void theUserTapsOnMenuButton() {
+        LoginService.deployMenu();
+    }
+
+    @And("the user taps on Log out button")
+    public void theUserTapsOnLogOutButton() {
+        LoginService.tapLogOut();
+    }
+
+    @When("the user taps on Confirm button")
+    public void theUserTapsOnConfirmButton() {
+        LoginService.tapConfirmButton();
+    }
+
+    @Then("the user is logged out and can see the log in screen")
+    public void theUserIsLoggedOutAndCanSeeTheLogInScreen() {
+        LoginService.verifyOnLoginScreen();
+    }
+
+    @And("the user inputs <duration> as the desired duration\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/")
+    public void theUserInputsDurationAsTheDesiredDuration() {
+    }
 }

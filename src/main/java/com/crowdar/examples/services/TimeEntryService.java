@@ -8,7 +8,7 @@ import org.testng.Assert;
 public class TimeEntryService {
     public static void addNewTimeEntry() {
         MobileActionManager.waitVisibility(LoginConstants.TIME_TRACKER_LIST);
-        GenericService.clickByXpathGeneric(TimeEntryConstants.NEW_TIME_ENTRY);
+        GenericService.clickByXpathGeneric(TimeEntryConstants.NEW_TIME_ENTRY_XPATH);
         MobileActionManager.waitClickable(TimeEntryConstants.ADD_MANUAL_ENTRY).click();
     }
 

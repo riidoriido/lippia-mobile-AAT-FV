@@ -21,18 +21,17 @@ public class LoginService {
             throw new IllegalArgumentException("Identifier null");
         }
 
-        String keyId = identifier;
         Map<String, String> inputsLocator = Map.of(
                 "username", LoginConstants.INPUT_EMAIL,
                 "password", LoginConstants.INPUT_PASSWORD
         );
 
-        if (!inputsLocator.containsKey(keyId)) {
+        if (!inputsLocator.containsKey(identifier)) {
             throw new IllegalArgumentException("Invalid identifier: " + identifier);
         }
 
-        String credentials = getCredentials(keyId);
-        MobileActionManager.setInput(inputsLocator.get(keyId), credentials);
+        String credentials = getCredentials(identifier);
+        MobileActionManager.setInput(inputsLocator.get(identifier), credentials);
     }
 
     private static String getCredentials(String identifier) {
@@ -56,7 +55,19 @@ public class LoginService {
     }
 
 
-    public static void main(String[] args) {
+    public static void deployMenu() {
+        MobileActionManager.waitClickable(LoginConstants.DEPLOY_MENU).click();
+    }
 
+    public static void tapLogOut() {
+        MobileActionManager.waitClickable(LoginConstants.LOGOUT_BUTTON).click();
+    }
+
+    public static void tapConfirmButton(){
+        MobileActionManager.waitClickable(LoginConstants.LOGOUT_CONFIRMATION_BUTTON).click();
+    }
+    public static void verifyOnLoginScreen(){
+        MobileActionManager.waitVisibility(LoginConstants.LOGIN_TITLE_TXT);
+        Assert.assertTrue(MobileActionManager.isVisible(LoginConstants.LOGIN_TITLE_TXT));
     }
 }

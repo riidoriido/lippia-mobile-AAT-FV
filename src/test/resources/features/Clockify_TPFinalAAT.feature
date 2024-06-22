@@ -12,7 +12,13 @@ Feature: Clockify App Log In
     When the user taps on log in button
     Then the user is logged in and can see the dashboard
 
-  Scenario: logout
+    @Logout
+  Scenario: Successful log out from Clockify App
+    And the user logs in
+    And the user taps on Menu button
+    And the user taps on Log out button
+    When the user taps on Confirm button
+    Then the user is logged out and can see the log in screen
 
   @Smoke @AddTimeEntry
   Scenario Outline: Successful Time Entry creation
