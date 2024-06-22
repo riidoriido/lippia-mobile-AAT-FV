@@ -12,6 +12,8 @@ Feature: Clockify App Log In
     When the user taps on log in button
     Then the user is logged in and can see the dashboard
 
+  Scenario: logout
+
   @Smoke @AddTimeEntry
   Scenario Outline: Successful Time Entry creation
     And the user logs in
@@ -25,3 +27,18 @@ Feature: Clockify App Log In
       | duration | description |
       | 8        | Test_task   |
 
+  Scenario Outline: Successful Detailed Time Entry creation
+    And the user logs in
+    And the user taps on Add Manually button
+    And the user inputs <duration> as the desired duration//////////
+    And the user inputs Time Entry <description>
+    When the user taps on Save button
+    Then the user can see the new Time entry listed
+
+    Examples:
+      | duration | description |
+      | 8        | Test_task   |
+
+    Scenario: cancel data input
+
+    Scenario: switch to dark mode
