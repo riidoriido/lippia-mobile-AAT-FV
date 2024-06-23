@@ -10,6 +10,7 @@ Feature: Clockify App Timetracker
 
     And the user taps on Add Manually button
     And the user inputs <duration> as the desired duration
+    And the user taps on "OK" button
     And the user inputs Time Entry <description>
     When the user taps on Save button
     Then the user can see the new Time entry listed
@@ -22,6 +23,8 @@ Feature: Clockify App Timetracker
 
     And the user taps on Add Manually button
     And the user inputs <duration> as the desired duration//////////
+    And the user taps on Calendar button
+
     And the user inputs Time Entry <description>
     When the user taps on Save button
     Then the user can see the new Time entry listed

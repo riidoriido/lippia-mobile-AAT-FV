@@ -8,4 +8,5 @@ public class TimeEntryConstants {
     public static final String TIMEENTRY_DESCRIPTION_INPUT = "xpath://android.widget.EditText[@resource-id='EditItemTextField']";
     public static final String SAVE_BUTTON = "xpath://android.view.View[@resource-id='saveFabButton']/android.widget.Button";
     public static final String ADDED_TIME_ENTRY = "xpath://androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[1]/android.view.View";
+    public static final String CALENDAR_OPEN_SELECT = "xpath://android.widget.TextView[@resource-id='startDate']";
 }
