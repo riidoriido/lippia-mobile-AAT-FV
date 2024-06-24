@@ -22,6 +22,15 @@ public class TimeEntrySteps extends PageSteps {
     public void theUserInputsDurationAsTheDesiredDuration(String duration) {
         TimeEntryService.inputEntryDuration(duration);
     }
+    @And("the user taps on Calendar button")
+    public void theUserTapsOnCalendarButton() {
+        TimeEntryService.openCalendar();
+    }
+
+    @And("the user taps on Previous Month button")
+    public void theUserTapsOnPreviousMonthButton() {
+        TimeEntryService.switchMonthCalendar();
+    }
 
     @And("the user inputs Time Entry (.*)$")
     public void theUserInputsTimeEntryDescription(String description) {

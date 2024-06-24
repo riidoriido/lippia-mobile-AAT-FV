@@ -2,6 +2,7 @@ package com.crowdar.examples.services;
 
 import com.crowdar.core.actions.MobileActionManager;
 import com.crowdar.examples.constants.LoginConstants;
+import com.crowdar.examples.constants.MiscConstants;
 import com.crowdar.examples.constants.TimeEntryConstants;
 import org.testng.Assert;
 
@@ -15,6 +16,14 @@ public class TimeEntryService {
     public static void inputEntryDuration(String duration) {
         MobileActionManager.setInput(TimeEntryConstants.INPUT_HOURS,duration);
         MobileActionManager.click(TimeEntryConstants.SET_HOURS);
+    }
+
+    public static void openCalendar() {
+        MobileActionManager.waitClickable(TimeEntryConstants.CALENDAR_OPEN_SELECT).click();
+    }
+
+    public static void switchMonthCalendar(){
+        MobileActionManager.waitClickable(TimeEntryConstants.CALENDAR_PREVIOUS_MONTH_CHANGE).click();
     }
 
     public static void enterTimEntryDesc(String description) {
