@@ -1,24 +1,25 @@
-@Regression
+@Regression @TimeTracker
 Feature: Clockify App Timetracker
 
   Background:
     Given The app is loaded correctly
     And the user logs in
 
-  @Smoke @AddTimeEntry
+  @AddTimeEntryQuick
   Scenario Outline: Successful Time Entry creation
     And the user taps on Add Manually button
     And the user inputs <duration> as the desired duration
-    And the user taps on "OK" button
     And the user inputs Time Entry <description>
     When the user taps on Save button
     Then the user can see the new Time entry listed
 
     Examples:
-      | duration | description |
-      | 8        | Test_task   |
+      | duration | description          |
+      | 8        | task_CleanAfterTest  |
+      | 12       | task2_CleanAfterTest |
+      | 5        | task3_CleanAfterTest |
 
-    @NewTimeEntry
+  @Smoke @AddDetailedTimeEntry
   Scenario Outline: Successful Detailed Time Entry creation
     And the user taps on Add Manually button
     And the user inputs <duration> as the desired duration
@@ -34,4 +35,4 @@ Feature: Clockify App Timetracker
 
     Examples:
       | duration | date | description |
-      | 8        | 8    | Test_task   |
+      | 8        | 12   | taskTPFINAL |

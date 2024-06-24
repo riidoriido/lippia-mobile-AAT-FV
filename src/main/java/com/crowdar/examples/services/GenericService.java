@@ -6,6 +6,7 @@ import com.crowdar.examples.constants.LoginConstants;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
+import java.util.List;
 
 
 public class GenericService {
@@ -24,6 +25,10 @@ public class GenericService {
 
     public static void clickByXpathGeneric(String locator) {
         DriverManager.getDriverInstance().findElement(By.xpath(locator)).click();
+    }
+
+    public static String parseListToString(List<String> list) {
+        return String.join(",", list);
     }
 
 }

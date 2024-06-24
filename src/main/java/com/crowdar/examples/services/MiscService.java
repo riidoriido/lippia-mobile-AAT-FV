@@ -7,7 +7,7 @@ import org.testng.Assert;
 public class MiscService {
 
     public static void tapOnButtonByText(String buttonTxt) {
-        MobileActionManager.waitVisibility(MiscConstants.MISC_BUTTON_LOCATOR,buttonTxt).click();
+        MobileActionManager.waitClickable(MiscConstants.MISC_BUTTON_LOCATOR,buttonTxt).click();
     }
 
     public static void selectDarkMode() {

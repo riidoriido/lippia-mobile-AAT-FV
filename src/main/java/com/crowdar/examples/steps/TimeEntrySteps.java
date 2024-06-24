@@ -1,11 +1,11 @@
 package com.crowdar.examples.steps;
 
+import com.crowdar.examples.services.ApiHelperService;
 import com.crowdar.examples.services.TimeEntryService;
 import com.crowdar.core.PageSteps;
 import com.crowdar.examples.services.GenericService;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
+import org.testng.annotations.AfterTest;
 
 public class TimeEntrySteps extends PageSteps {
     @And("the user logs in$")
@@ -47,5 +47,8 @@ public class TimeEntrySteps extends PageSteps {
         TimeEntryService.verifyTimeEntryCreated();
     }
 
-
+    @AfterTest
+    public static void cleanupAfterTest() {
+        ApiHelperService.cleanUpEntriesAfterTest();
+    }
 }
