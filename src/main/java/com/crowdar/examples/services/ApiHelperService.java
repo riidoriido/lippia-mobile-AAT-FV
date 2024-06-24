@@ -21,24 +21,6 @@ public class ApiHelperService {
                 .then().extract().response();
     }
 
-    public static Response sendPutRequest(String endpoint, String body) {
-        return RestAssured
-                .given()
-                .header("Content-Type", "application/json")
-                .header("x-api-key", apiKey)
-                .body(body)
-                .put(baseUrl+endpoint);
-    }
-
-    public static Response sendGetRequest(String endpoint) {
-        return RestAssured
-                .given()
-                .header("Content-Type", "application/json")
-                .header("x-api-key", apiKey)
-                .when()
-                .get(baseUrl+endpoint);
-    }
-
     public static Response sendDeleteRequest(String endpoint,String param,List<String> paramValues) {
         return RestAssured
                 .given()

@@ -5,6 +5,7 @@ import com.crowdar.examples.services.TimeEntryService;
 import com.crowdar.core.PageSteps;
 import com.crowdar.examples.services.GenericService;
 import io.cucumber.java.en.*;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 
 public class TimeEntrySteps extends PageSteps {
@@ -51,4 +52,5 @@ public class TimeEntrySteps extends PageSteps {
     public static void cleanupAfterTest() {
         ApiHelperService.cleanUpEntriesAfterTest();
     }
+
 }

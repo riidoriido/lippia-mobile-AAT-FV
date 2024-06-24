@@ -3,6 +3,7 @@ package com.crowdar.examples.services;
 import com.crowdar.core.PropertyManager;
 import com.crowdar.core.actions.MobileActionManager;
 import com.crowdar.examples.constants.LoginConstants;
+import com.crowdar.examples.constants.MiscConstants;
 import org.testng.Assert;
 
 import java.util.Map;
@@ -56,7 +57,7 @@ public class LoginService {
 
 
     public static void deployMenu() {
-        MobileActionManager.waitClickable(LoginConstants.DEPLOY_MENU).click();
+        MobileActionManager.waitClickable(MiscConstants.DEPLOY_MENU).click();
     }
 
     public static void tapLogOut() {
