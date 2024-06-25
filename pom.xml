@@ -30,6 +30,8 @@
         <crowdar.cucumber.option>src/test/resources/features --glue com/crowdar --glue com/crowdar/bdd/cukes  --tags ${crowdar.cucumber.filter} --tags 'not @Ignore' --plugin com.crowdar.examples.report.Reporter: --plugin pretty</crowdar.cucumber.option>
         <crowdar.projectType.driverCapabilities.jsonFile>src/main/resources/capabilities/androidCapabilities.json</crowdar.projectType.driverCapabilities.jsonFile>
         <crowdar.remoteDriverType></crowdar.remoteDriverType>
+        <buildidentifier>${maven.build.timestamp}</buildidentifier>
+        <maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
     </properties>
 
     <profiles>
@@ -43,7 +45,6 @@
                 <cucumber.runner>testng.xml</cucumber.runner>
                 <crowdar.avd>Pixel3</crowdar.avd>
                 <crowdar.appLocation>C:\\\\Users\\\\riido\\\\Documents\\\\Development\\\\2024\\\\AAT-2024-Crowdar\\\\TP7_mobile\\\\lippia-mobile-AAT-FV\\\\Clockify.apk</crowdar.appLocation>
-
                 <crowdar.deviceName>Pixel3</crowdar.deviceName>
             </properties>
         </profile>

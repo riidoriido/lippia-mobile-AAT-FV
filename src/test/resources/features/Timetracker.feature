@@ -1,4 +1,4 @@
-@Regression @TimeTracker
+@Regression @Smoke
 Feature: Clockify App Timetracker
 
   Background:
@@ -19,7 +19,7 @@ Feature: Clockify App Timetracker
       | duration | description          |
       | 8        | task_CleanAfterTest  |
 
-  @Smoke @AddDetailedTimeEntry
+  @AddDetailedTimeEntry
   Scenario Outline: Successful Detailed Time Entry creation
     And the user taps on Add Manually button
     And the user inputs <duration> as the desired duration
