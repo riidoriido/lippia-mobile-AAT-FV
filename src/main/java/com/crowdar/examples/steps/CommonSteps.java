@@ -1,8 +1,6 @@
 package com.crowdar.examples.steps;
 
 import com.crowdar.core.PageSteps;
-import com.crowdar.core.actions.MobileActionManager;
-import com.crowdar.examples.constants.MiscConstants;
 import com.crowdar.examples.services.GenericService;
 import io.cucumber.java.en.*;
 

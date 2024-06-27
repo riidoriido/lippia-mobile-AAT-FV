@@ -3,7 +3,6 @@ package com.crowdar.examples.services;
 import com.crowdar.core.PropertyManager;
 import com.crowdar.core.actions.MobileActionManager;
 import com.crowdar.examples.constants.LoginConstants;
-import com.crowdar.examples.constants.MiscConstants;
 import org.testng.Assert;
 
 import java.util.Map;

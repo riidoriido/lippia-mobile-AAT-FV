@@ -1,0 +1,12 @@
+{
+  "realDeviceName": "{{realDeviceName}}",
+  "app": "{{app}}",
+  "platformName": "Android",
+  "redmi9avd": "{{redmi9avd}}",
+  "resetKeyboard": "true",
+  "unicodeKeyboard": "true",
+  "appium:automationName": "UiAutomator2",
+
+  "appPackage": "me.clockify.android",
+  "appActivity": "me.clockify.android.presenter.SplashActivity"
+}
