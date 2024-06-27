@@ -1,13 +1,16 @@
 package com.crowdar;
 
-import com.crowdar.examples.services.ApiHelperService;
+import com.crowdar.examples.services.APIManagement;
+import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
 
 public class Hooks {
 
-    @After
+    @After(value = "@CleanUpTimeEntry")
     public static void cleanupEntries() {
-        ApiHelperService.cleanUpEntriesAfterTest();
-        ApiHelperService.cleanUpSpecificEntry();
+            APIManagement.cleanUpEntriesAfterTest();
+            APIManagement.cleanUpSpecificEntry();
+
     }
+
 }

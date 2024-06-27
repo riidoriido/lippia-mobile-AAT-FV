@@ -6,10 +6,7 @@ import io.cucumber.java.en.*;
 
 public class MiscFunctionsSteps extends PageSteps {
 
-    @And("the user taps on {string} button")
-    public void theUserTapsOnButton(String buttonTxt) {
-        MiscService.tapOnButtonByText(buttonTxt);
-    }
+
 
     @And("the user selects Dark option")
     public void theUserSelectsDarkOption() {

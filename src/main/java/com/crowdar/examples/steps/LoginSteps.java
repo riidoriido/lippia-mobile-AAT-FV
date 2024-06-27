@@ -1,17 +1,11 @@
 package com.crowdar.examples.steps;
 
-import com.crowdar.examples.services.GenericService;
 import com.crowdar.examples.services.LoginService;
 import com.crowdar.core.PageSteps;
 import io.cucumber.java.en.*;
 
 public class LoginSteps extends PageSteps {
 
-    @Given("The app is loaded correctly")
-    @Then("Login page is displayed")
-    public void isLoginPageVisible() {
-        GenericService.verifyAppLoaded();
-    }
 
     @And("the user taps on Log in Manually")
     public void theUserTapsOnLogInManually() {
@@ -33,10 +27,6 @@ public class LoginSteps extends PageSteps {
         LoginService.verifyLoggedin();
     }
 
-    @And("the user taps on Menu button")
-    public void theUserTapsOnMenuButton() {
-        LoginService.deployMenu();
-    }
 
     @And("the user taps on Log out button")
     public void theUserTapsOnLogOutButton() {
@@ -53,7 +43,4 @@ public class LoginSteps extends PageSteps {
         LoginService.verifyOnLoginScreen();
     }
 
-    @And("the user inputs <duration> as the desired duration\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/")
-    public void theUserInputsDurationAsTheDesiredDuration() {
-    }
 }

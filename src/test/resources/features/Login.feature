@@ -6,17 +6,17 @@ Feature: Clockify App Log In
 
   @Smoke @LogInSuccess
   Scenario: Successful log in to Clockify App
-    And the user taps on Log in Manually
+    When the user taps on Log in Manually
     And the user inputs credential username
     And the user inputs credential password
-    When the user taps on log in button
+    And the user taps on log in button
     Then the user is logged in and can see the dashboard
 
     @Logout
   Scenario: Successful log out from Clockify App
-    And the user logs in
+    When the user logs in
     And the user taps on Menu button
     And the user taps on Log out button
-    When the user taps on Confirm button
+    And the user taps on Confirm button
     Then the user is logged out and can see the log in screen
 
